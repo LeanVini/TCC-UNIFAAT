@@ -1,0 +1,67 @@
+<!-- Define o tipo de documento HTML5 -->
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Define codificação de caracteres -->
+    <meta charset="utf-8">
+    <!-- Responsividade -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Título da página -->
+    <title>Clientes</title>
+    <!-- Importa o CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <h1>Agendamentos de Massagem</h1>
+
+    <!-- Seção visual de agendamento -->
+    <section class="agendamento-visual" style="background:#fffbe9;border-radius:18px;box-shadow:0 2px 12px #e2cfa7;padding:32px 18px;margin-bottom:32px;max-width:600px;margin:auto;">
+        <div id="servicoSelecionado" style="display:flex;align-items:center;justify-content:space-between;background:#fff;border-radius:12px;padding:18px 24px;box-shadow:0 2px 8px #e2cfa7;margin-bottom:24px;">
+            <div>
+                <span id="nomeServico" style="font-size:1.2rem;color:#b89c5a;font-weight:600;">Selecione um serviço</span>
+            </div>
+            <div>
+                <span id="valorServico" style="font-size:1.1rem;color:#7a6a3a;">R$ 0,00</span>
+            </div>
+        </div>
+        <div id="navegacaoDatas" style="display:flex;align-items:center;justify-content:center;margin-bottom:18px;gap:12px;">
+            <button id="dataAnterior" style="background:none;border:none;color:#b89c5a;font-size:1.2rem;cursor:pointer;">&#8592; Anterior</button>
+            <div id="datasDisponiveis" style="display:flex;gap:8px;"></div>
+            <button id="dataProxima" style="background:none;border:none;color:#b89c5a;font-size:1.2rem;cursor:pointer;">Próximo &#8594;</button>
+        </div>
+        <div id="horariosDisponiveis" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:18px;"></div>
+        <div id="mensagemSemHorario" style="text-align:center;color:#c53232;font-size:1rem;margin-bottom:18px;display:none;">Ops, estamos com agenda cheia nesse dia. Que tal agendar para outra data? =)</div>
+    </section>
+
+    <!-- Formulário de agendamento -->
+    <form id="formAgendamento" style="display:none;">
+        <input type="hidden" id="data" required>
+        <input type="hidden" id="hora" required>
+        <select id="tipo_massagem" required>
+            <option value="">Selecione o tipo de massagem</option>
+        </select>
+        <textarea id="observacoes" placeholder="Observações"></textarea>
+        <button type="submit">Agendar</button>
+    </form>
+
+    <h2>Meus Agendamentos</h2>
+
+    <table id="listaAgendamentos">
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Hora</th>
+                <th>Tipo de Massagem</th>
+                <th>Observações</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script src="js/agendamentos.js"></script>
+
+</body>
+</html>
